@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS items (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  price REAL NOT NULL,
+  category TEXT NOT NULL,
+  image TEXT NOT NULL
+);
