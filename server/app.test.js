@@ -37,6 +37,18 @@ describe('GET test', () => {
 })
 });
 
-
+describe('GET test /:id', () => {
+    it('should return the correct item', async () =>{
+    const response = await request(app).get('/items/1');
+    expect(response.body.id).toBe(1);
+    expect(response.body).toEqual(expect.objectContaining({
+        name: expect.any(String),
+        description: expect.any(String),
+        price: expect.any(Number),
+        category: expect.any(String),
+        image: expect.any(String),
+      }))
+    }) 
+})
 
 
