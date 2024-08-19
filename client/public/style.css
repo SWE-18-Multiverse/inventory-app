@@ -1,3 +1,31 @@
 * {
   box-sizing: border-box;
 }
+
+/* LANDING PAGE */
+
+.inventory-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:70px;
+}
+
+.inventory-container li {
+  list-style-type: none;
+  width: 10rem;
+}
+
+.inventory-container li a{
+  text-decoration: none;
+}
+
+.inventory-image{
+  width: 10rem;
+  height: 12rem;
+}
+
+.inventory-item-name{
+  color: black;
+}
+
+/* SINGLE ITEM */
