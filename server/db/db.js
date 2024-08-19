@@ -39,6 +39,7 @@ module.exports = {
   createItems,
   getItems,
   getOneItem,
+  db,
   // updateOneItem,
   // deleteOneItem,
 };

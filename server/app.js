@@ -35,8 +35,6 @@ app.delete("/items/:id", (req, res) => {
   // Delete one item
 });
 
-const port = 3000;
+module.exports = app
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+
