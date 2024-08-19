@@ -33,8 +33,13 @@ function Item() {
   return (
     <>
       <h1>{item.name}</h1>
+      <h2>{item.category}</h2>
+      <img src={item.image} alt={item.name} />
+      <p>{item.description}</p>
+      <p>{`£${item.price}`}</p>
     </>
   );
 }
 
 export default Item;
+
