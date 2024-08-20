@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function Inventory() {
   const [items, setItems] = useState([]);
-  const [currentItem, setCurrentItem] = useState(null);
 
   useEffect(() => {
     async function fetchItems() {
