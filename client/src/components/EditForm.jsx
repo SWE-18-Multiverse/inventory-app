@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditForm = ({ currentItem }) => {
+const EditForm = ({ currentItem, ...props }) => {
   const [data, setData] = useState({
     name: currentItem.name,
     description: currentItem.description,
@@ -9,14 +9,26 @@ const EditForm = ({ currentItem }) => {
     image: currentItem.image,
   });
 
-  const handleChange = (event) => {};
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await fetch(),
-      {
-        //make POST request to /items
-      };
+    const response = await fetch(event.target.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const editedItem = await response.json();
+    props.navigate(editedItem);
+
+    await fetchItems();
   };
 
   return (
@@ -80,7 +92,7 @@ const EditForm = ({ currentItem }) => {
         />
       </p>
       <p>
-        <button type="submit">Edit Item</button>
+        <button type="submit">Submit</button>
       </p>
     </form>
   );

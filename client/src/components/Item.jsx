@@ -35,6 +35,20 @@ function Item() {
       document.title = item.name;
     }
   }, [item.name]);
+  let { itemId } = useParams();
+  const handleDelete = async () => {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this page?",
+    );
+    if (!isConfirmed) return;
+    //send a DELETE request to /items/:id
+    await fetch("http://localhost:3000/items/" + itemId, {
+      method: "DELETE",
+    });
+    await fetchPages();
+    // Return to the home page
+    setItem(null);
+  };
 
   return (
     <>
@@ -44,8 +58,8 @@ function Item() {
       <p>{item.description}</p>
       <p>{`£${item.price}`}</p>
       <button onClick={handleClick}>Edit Item</button>
-      <button>Delete Item</button>
-      {isEditingItem && <EditForm currentItem={item}/>}
+      <button onClick={handleDelete}>Delete Item</button>
+      {isEditingItem && <EditForm currentItem={item} />}
     </>
   );
 }
