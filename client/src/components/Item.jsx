@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import EditForm from "./EditForm";
 
 function Item() {
   const [item, setItem] = useState({
@@ -10,6 +11,11 @@ function Item() {
     category: null,
     image: null,
   });
+  const [isEditingItem, setIsEditingItem] = useState(false);
+
+  const handleClick = () => {
+    setIsEditingItem(!isEditingItem);
+  };
 
   // Gets the route parameters (see client/src/main.jsx).
   const params = useParams();
@@ -37,6 +43,9 @@ function Item() {
       <img src={item.image} alt={item.name} />
       <p>{item.description}</p>
       <p>{`£${item.price}`}</p>
+      <button onClick={handleClick}>Edit Item</button>
+      <button>Delete Item</button>
+      {isEditingItem && <EditForm />}
     </>
   );
 }

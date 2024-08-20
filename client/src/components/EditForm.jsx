@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import apiURL from "../api";
 
 const EditForm = ({ currentItem }) => {
   const [data, setData] = useState({
@@ -21,7 +20,11 @@ const EditForm = ({ currentItem }) => {
   };
 
   return (
-    <form action={`${apiURL}/items`} method="POST" onSubmit={handleSubmit}>
+    <form
+      action={"http://localhost:5173/items"}
+      method="POST"
+      onSubmit={handleSubmit}
+    >
       <p>
         <label htmlFor="name">Name</label>
         <input
