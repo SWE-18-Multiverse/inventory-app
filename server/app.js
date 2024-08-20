@@ -10,7 +10,9 @@ app.use(express.json());
 app.post("/items", (req, res) => {
   // Create one item
   const newItem = req.body;
-  res.status(201).json(newItem);
+  const { lastInsertRowid } = db.createOneItem.run(newItem);
+  const createdItem = db.getOneItem.get({ id: lastInsertRowid });
+  res.status(201).json(createdItem);
 });
 
 app.get("/items", (req, res) => {

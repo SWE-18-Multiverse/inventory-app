@@ -31,7 +31,7 @@ const AddForm = ({fetchItems, hideForm}) => {
   };
 
   return (
-    <form action={"http://localhost:5173/items"} method="POST" onSubmit={handleSubmit}>
+    <form action={"http://localhost:3000/items"} method="POST" onSubmit={handleSubmit}>
       <p>
         <label htmlFor="name">Name</label>
         <input

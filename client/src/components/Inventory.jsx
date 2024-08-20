@@ -14,7 +14,7 @@ function Inventory() {
 
   useEffect(() => {
      fetchItems();
-  }, [fetchItems]);
+  }, [fetchItems, items]);
 
   useEffect(() => {
     document.title = "Inventory";
