@@ -58,7 +58,8 @@ app.patch("/items/:id", (req, res) => {
 });
 
 app.delete("/items/:id", (req, res) => {
-  // Delete one item
+const item = db.getOneItem.get({ id: req.params.id});
+item.deleteOneItem
 });
 
 module.exports = app;

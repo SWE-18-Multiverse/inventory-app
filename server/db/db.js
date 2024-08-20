@@ -31,8 +31,11 @@ const getItems = db.prepare("SELECT * FROM items");
 // A prepared statement that gets one item by its ID.
 const getOneItem = db.prepare("SELECT * FROM items WHERE id = :id");
 
-// const updateOneItem = db.prepare();
-// const deleteOneItem = db.prepare();
+// A prepared statement that deletes a item by its ID.
+const deleteOneItem = db.prepare("DELETE FROM items WHERE id = :id");
+
+
+ // const updateOneItem = db.prepare();
 
 module.exports = {
   createOneItem,
@@ -40,6 +43,6 @@ module.exports = {
   getItems,
   getOneItem,
   db,
+  deleteOneItem,
   // updateOneItem,
-  // deleteOneItem,
 };
