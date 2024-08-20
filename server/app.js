@@ -9,6 +9,10 @@ app.use(express.json());
 
 app.post("/items", (req, res) => {
   // Create one item
+  const newItem = req.body;
+  const { lastInsertRowid } = db.createOneItem.run(newItem);
+  const createdItem = db.getOneItem.get({ id: lastInsertRowid });
+  res.status(201).json(createdItem);
 });
 
 app.get("/items", (req, res) => {
@@ -35,6 +39,4 @@ app.delete("/items/:id", (req, res) => {
   // Delete one item
 });
 
-module.exports = app
-
-
+module.exports = app;
