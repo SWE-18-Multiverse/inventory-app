@@ -11,27 +11,27 @@ app.post("/items", (req, res) => {
   // Create one item
   const newItem = req.body;
 
-  if(!newItem.name){
-    res.status(400).json({error: 'Missing item name'});
-    return
+  if (!newItem.name) {
+    res.status(400).json({ error: "Missing item name" });
+    return;
   }
-  if(!newItem.description){
-    res.status(400).json({error: 'Missing item description'});
-    return
+  if (!newItem.description) {
+    res.status(400).json({ error: "Missing item description" });
+    return;
   }
-  if(!newItem.price){
-    res.status(400).json({error: 'Missing item price'});
-    return
+  if (!newItem.price) {
+    res.status(400).json({ error: "Missing item price" });
+    return;
   }
-  if(!newItem.category){
-    res.status(400).json({error: 'Missing item category'});
-    return
+  if (!newItem.category) {
+    res.status(400).json({ error: "Missing item category" });
+    return;
   }
-  if(!newItem.image){
-    res.status(400).json({error: 'Missing item image'});
-    return
+  if (!newItem.image) {
+    res.status(400).json({ error: "Missing item image" });
+    return;
   }
-  
+
   const { lastInsertRowid } = db.createOneItem.run(newItem);
   const createdItem = db.getOneItem.get({ id: lastInsertRowid });
   res.status(201).json(createdItem);
@@ -54,12 +54,13 @@ app.get("/items/:id", (req, res) => {
 });
 
 app.patch("/items/:id", (req, res) => {
-  // Update one item
+  const item = db.updateOneItem.run({ id: req.params.id });
+  const updatedItem = db.getOneItem.get({ id: req.params.id });
+  res.json(updatedItem);
 });
 
 app.delete("/items/:id", (req, res) => {
-const item = db.getOneItem.get({ id: req.params.id});
-item.deleteOneItem
+  const item = db.deleteOneItem.run({ id: req.params.id });
 });
 
 module.exports = app;
