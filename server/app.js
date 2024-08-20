@@ -54,7 +54,14 @@ app.get("/items/:id", (req, res) => {
 });
 
 app.patch("/items/:id", (req, res) => {
-  const item = db.updateOneItem.run({ id: req.params.id });
+  const item = db.updateOneItem.run({
+    id: req.params.id,
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
+    category: req.body.category,
+    image: req.body.image,
+  });
   const updatedItem = db.getOneItem.get({ id: req.params.id });
   res.json(updatedItem);
 });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditForm = ({ currentItem, ...props }) => {
+const EditForm = ({ currentItem, setItem, ...props }) => {
   const [data, setData] = useState({
     name: currentItem.name,
     description: currentItem.description,
@@ -19,22 +19,22 @@ const EditForm = ({ currentItem, ...props }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch(event.target.action, {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
     const editedItem = await response.json();
-    props.navigate(editedItem);
+    setItem(editedItem);
 
     await fetchItems();
   };
 
   return (
     <form
-      action={"http://localhost:5173/items"}
-      method="POST"
+      action={`http://localhost:5173/items/${currentItem.id}`}
+      method="PATCH"
       onSubmit={handleSubmit}
     >
       <p>

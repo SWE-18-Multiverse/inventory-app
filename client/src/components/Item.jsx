@@ -59,7 +59,7 @@ function Item() {
       <p>{`£${item.price}`}</p>
       <button onClick={handleClick}>Edit Item</button>
       <button onClick={handleDelete}>Delete Item</button>
-      {isEditingItem && <EditForm currentItem={item} />}
+      {isEditingItem && <EditForm currentItem={item} setItem={setItem} />}
     </>
   );
 }
