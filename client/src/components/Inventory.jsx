@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Inventory() {
   const [items, setItems] = useState([]);
+  const [currentItem, setCurrentItem] = useState(null);
 
   useEffect(() => {
     async function fetchItems() {
@@ -25,10 +26,14 @@ function Inventory() {
         {items.map((item) => (
           <li key={item.id}>
             <Link to={`/items/${item.id}`}>
-            <>
-              <img className='inventory-image' src={item.image} alt={item.name}/> 
-              <h3 className="inventory-item-name">{item.name}</h3>
-            </>
+              <>
+                <img
+                  className="inventory-image"
+                  src={item.image}
+                  alt={item.name}
+                />
+                <h3 className="inventory-item-name">{item.name}</h3>
+              </>
             </Link>
           </li>
         ))}
