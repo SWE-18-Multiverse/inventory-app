@@ -51,4 +51,80 @@ describe('GET test /:id', () => {
     }) 
 })
 
+describe('POST /items', () => {
+  it('should return the item was created', async () =>{
+    const newItem = {
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    };
+    const response = await request(app).post('/items').send(newItem);
+    expect(response.body).toEqual(expect.objectContaining({
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    }) 
+  )})
+  
+  it('should throw an error, if no valid name provided', async () => {
+    const nonValidItem = {
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"};
+    const response = await request(app).post('/items').send(nonValidItem);
+    expect(response.body.error).toBe('Missing item name');
+    expect(response.statusCode).toBe(400);
+  })
+
+  it('should throw an error, if no valid description provided', async () => {
+    const nonValidItem = {
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"};
+    const response = await request(app).post('/items').send(nonValidItem);
+    expect(response.body.error).toBe('Missing item description');
+    expect(response.statusCode).toBe(400);
+  })
+
+  it('should throw an error, if no valid price provided', async () => {
+    const nonValidItem = {
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"};
+    const response = await request(app).post('/items').send(nonValidItem);
+    expect(response.body.error).toBe('Missing item price');
+    expect(response.statusCode).toBe(400);
+  })
+
+  it('should throw an error, if no valid category provided', async () => {
+    const nonValidItem = {
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"};
+    const response = await request(app).post('/items').send(nonValidItem);
+    expect(response.body.error).toBe('Missing item category');
+    expect(response.statusCode).toBe(400);
+  })
+
+  it('should throw an error, if no valid image provided', async () => {
+    const nonValidItem = {
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "price": 109.95,
+      "category": "men's clothing",
+    }
+    const response = await request(app).post('/items').send(nonValidItem);
+    expect(response.body.error).toBe('Missing item image');
+    expect(response.statusCode).toBe(400);
+  })
+})
+
 
