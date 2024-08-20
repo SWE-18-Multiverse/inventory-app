@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddForm = () => {
+const AddForm = ({fetchItems, hideForm}) => {
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -9,14 +9,25 @@ const AddForm = () => {
     image: "",
   });
 
-  const handleChange = (event) => {};
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value
+    })
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await fetch(),
-      {
-        //make POST request to /items
-      };
+    await fetch(event.target.action, {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+
+    fetchItems()
+    hideForm()
   };
 
   return (
@@ -76,7 +87,7 @@ const AddForm = () => {
         />
       </p>
       <p>
-        <button type="submit">Add Item</button>
+        <button type="submit">Create Item</button>
       </p>
     </form>
   );
