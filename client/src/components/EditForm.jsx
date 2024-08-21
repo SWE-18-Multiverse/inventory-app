@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditForm = ({ currentItem, setItem, ...props }) => {
+const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
   const [data, setData] = useState({
     name: currentItem.name,
     description: currentItem.description,
@@ -26,15 +26,17 @@ const EditForm = ({ currentItem, setItem, ...props }) => {
       body: JSON.stringify(data),
     });
     const editedItem = await response.json();
+
     setItem(editedItem);
 
-    await fetchItems();
+    // hide the form
+    setIsEditingItem(false)
   };
 
   return (
     <form
-      action={`http://localhost:5173/items/${currentItem.id}`}
-      method="PATCH"
+      action={`http://localhost:3000/items/${currentItem.id}`}
+      method="POST"
       onSubmit={handleSubmit}
     >
       <p>
