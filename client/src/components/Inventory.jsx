@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 function Inventory() {
   const [items, setItems] = useState([]);
 
-  const fetchItems = useCallback( async ()=>{
+  const fetchItems = useCallback(async () => {
     const response = await fetch("http://localhost:3000/items");
     const items = await response.json();
     setItems(items);
-  }, [])
+  }, []);
 
   useEffect(() => {
-     fetchItems();
-  }, [fetchItems, items]);
+    fetchItems();
+  }, [fetchItems]);
 
   useEffect(() => {
     document.title = "Inventory";
@@ -21,7 +21,7 @@ function Inventory() {
   return (
     <>
       <h1>Welcome to our Inventory</h1>
-     
+
       <ul className="inventory-container">
         {items.map((item) => (
           <li key={item.id}>

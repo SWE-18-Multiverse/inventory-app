@@ -67,7 +67,8 @@ app.patch("/items/:id", (req, res) => {
 });
 
 app.delete("/items/:id", (req, res) => {
-  const item = db.deleteOneItem.run({ id: req.params.id });
+  db.deleteOneItem.run({ id: req.params.id });
+  res.status(204).send();
 });
 
 module.exports = app;

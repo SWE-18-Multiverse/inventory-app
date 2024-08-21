@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EditForm from "./EditForm";
 
-
 function Item() {
   const [item, setItem] = useState({
     id: null,
@@ -12,9 +11,9 @@ function Item() {
     category: null,
     image: null,
   });
-  
+
   const [isEditingItem, setIsEditingItem] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -23,10 +22,8 @@ function Item() {
 
   // Gets the route parameters (see client/src/main.jsx).
   const params = useParams();
- 
 
   useEffect(() => {
-
     async function fetchItem() {
       const response = await fetch(`http://localhost:3000/items/${params.id}`);
       const item = await response.json();
@@ -42,11 +39,9 @@ function Item() {
     }
   }, [item.name]);
 
-
   const handleDelete = async () => {
-
     const isConfirmed = window.confirm(
-      "Are you sure you want to delete this page?",
+      "Are you sure you want to delete this item?",
     );
 
     if (!isConfirmed) return;
@@ -55,12 +50,11 @@ function Item() {
     await fetch(`http://localhost:3000/items/${params.id}`, {
       method: "DELETE",
     });
-   
+
     setItem(null);
 
     // Return to the home page
-    navigate("/", { replace: true });
-
+    navigate("/");
   };
 
   return (
@@ -72,7 +66,13 @@ function Item() {
       <p>{`£${item.price}`}</p>
       <button onClick={handleClick}>Edit Item</button>
       <button onClick={handleDelete}>Delete Item</button>
-      {isEditingItem && <EditForm currentItem={item} setItem={setItem} setIsEditingItem={setIsEditingItem}/>}
+      {isEditingItem && (
+        <EditForm
+          currentItem={item}
+          setItem={setItem}
+          setIsEditingItem={setIsEditingItem}
+        />
+      )}
     </>
   );
 }
