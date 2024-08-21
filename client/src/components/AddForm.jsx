@@ -26,8 +26,7 @@ const AddForm = ({fetchItems, hideForm}) => {
       body: JSON.stringify(data)
     })
 
-    fetchItems()
-    hideForm()
+ 
   };
 
   return (
