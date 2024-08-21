@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import EditForm from "./EditForm";
+
 
 function Item() {
   const [item, setItem] = useState({
@@ -13,6 +14,8 @@ function Item() {
   });
   
   const [isEditingItem, setIsEditingItem] = useState(false);
+  
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsEditingItem(!isEditingItem);
@@ -39,22 +42,25 @@ function Item() {
     }
   }, [item.name]);
 
+
   const handleDelete = async () => {
 
     const isConfirmed = window.confirm(
       "Are you sure you want to delete this page?",
     );
+
     if (!isConfirmed) return;
 
     //send a DELETE request to /items/:id
     await fetch(`http://localhost:3000/items/${params.id}`, {
       method: "DELETE",
     });
-    
-    // fetchPages();
+   
+    setItem(null);
 
     // Return to the home page
-    setItem(null);
+    navigate("/", { replace: true });
+
   };
 
   return (
