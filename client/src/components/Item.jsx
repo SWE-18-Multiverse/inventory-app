@@ -11,6 +11,7 @@ function Item() {
     category: null,
     image: null,
   });
+  
   const [isEditingItem, setIsEditingItem] = useState(false);
 
   const handleClick = () => {
@@ -19,8 +20,10 @@ function Item() {
 
   // Gets the route parameters (see client/src/main.jsx).
   const params = useParams();
+ 
 
   useEffect(() => {
+
     async function fetchItem() {
       const response = await fetch(`http://localhost:3000/items/${params.id}`);
       const item = await response.json();
@@ -35,17 +38,21 @@ function Item() {
       document.title = item.name;
     }
   }, [item.name]);
-  let { itemId } = useParams();
+
   const handleDelete = async () => {
+
     const isConfirmed = window.confirm(
       "Are you sure you want to delete this page?",
     );
     if (!isConfirmed) return;
+
     //send a DELETE request to /items/:id
-    await fetch("http://localhost:3000/items/" + itemId, {
+    await fetch(`http://localhost:3000/items/${params.id}`, {
       method: "DELETE",
     });
-    await fetchPages();
+    
+    // fetchPages();
+
     // Return to the home page
     setItem(null);
   };
@@ -59,7 +66,7 @@ function Item() {
       <p>{`£${item.price}`}</p>
       <button onClick={handleClick}>Edit Item</button>
       <button onClick={handleDelete}>Delete Item</button>
-      {isEditingItem && <EditForm currentItem={item} setItem={setItem} />}
+      {isEditingItem && <EditForm currentItem={item} setItem={setItem} setIsEditingItem={setIsEditingItem}/>}
     </>
   );
 }
