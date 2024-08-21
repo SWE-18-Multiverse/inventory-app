@@ -39,8 +39,8 @@ describe('GET test', () => {
 
 describe('GET test /:id', () => {
     it('should return the correct item', async () =>{
-    const response = await request(app).get('/items/1');
-    expect(response.body.id).toBe(1);
+    const response = await request(app).get('/items/2');
+    expect(response.body.id).toBe(2);
     expect(response.body).toEqual(expect.objectContaining({
         name: expect.any(String),
         description: expect.any(String),
@@ -125,6 +125,41 @@ describe('POST /items', () => {
     expect(response.body.error).toBe('Missing item image');
     expect(response.statusCode).toBe(400);
   })
+  
 })
 
+describe('DELETE /items/:id', () => {
+  it('Should delete item', async () => {
+    const responsePost = await request(app).post('/items').send({
 
+      "name": "Mens Cotton Jacket",
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "price": 55.99,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    })
+    const responseDelete = await request(app)
+    .delete(`/items/${responsePost.body.id}`)
+    expect(responseDelete.status).toBe(204)
+    const responseGet = await request(app).get(`/items/${responsePost.body.id}`)
+    expect(responseGet.status).toBe(404)
+  })
+  
+})
+
+describe('PATCH /items/:id', () => {
+  it('Should update item', async () => {
+    const updatedItem = {
+      "name" :"Mens Tweed Jacket",
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "price": 55.99,
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+      }
+    const response = await request(app)
+    .patch('/items/3')
+    .send(updatedItem)
+    expect(response.status).toBe(200)
+    expect(response.body).toMatchObject(updatedItem)
+  })
+})
