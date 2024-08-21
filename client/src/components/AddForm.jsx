@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddForm = ({fetchItems, hideForm}) => {
+const AddForm = ({ fetchItems, hideForm }) => {
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -9,28 +10,33 @@ const AddForm = ({fetchItems, hideForm}) => {
     image: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setData({
       ...data,
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     await fetch(event.target.action, {
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json'
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
-    })
-
- 
+      body: JSON.stringify(data),
+    });
+    navigate("/");
   };
 
   return (
-    <form action={"http://localhost:3000/items"} method="POST" onSubmit={handleSubmit}>
+    <form
+      action={"http://localhost:3000/items"}
+      method="POST"
+      onSubmit={handleSubmit}
+    >
       <p>
         <label htmlFor="name">Name</label>
         <input
