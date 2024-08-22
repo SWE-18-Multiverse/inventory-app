@@ -4,3 +4,95 @@ footer {
     border-top: 1px solid #ced4da;
     margin-top:50px;
 }
+
+.container {
+    /* 1140px */
+    max-width: 235rem;
+    padding: 0 1.6rem;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    column-gap: 5rem;
+    row-gap: 9.2rem;
+  }
+
+  .grid--5--cols {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .footer {
+    padding: 3.1rem 0;
+    border-top: 1px solid #E9ECEF;
+  }
+  
+  .grid--footer {
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  }
+  
+  .logo-col {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-logo {
+    display: block;
+    margin-top: -50px;
+    
+  }
+  
+  .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+  }
+  
+  .social-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+  
+  .copyright {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #767676;
+    margin-top: 20px;
+  }
+  
+  .footer-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+  }
+  
+  .contacts {
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .address {
+    margin-bottom: 2.4rem;
+  }
+  
+  .footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  
+  .footer-link:link,
+  .footer-link:visited {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #767676;
+    transition: all 0.3s;
+  }
+  
+  .footer-link:hover,
+  .footer-link:active {
+    color: #555;
+  }
