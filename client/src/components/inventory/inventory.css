@@ -22,6 +22,8 @@
     min-width: 200px;
     min-height: 300px;
     display: flex;
+    justify-content: space-evenly;
+    text-align: center;
     box-shadow: rgb(82 81 81 / 34%) 0px 2px 8px 0px;
 }
 
@@ -42,4 +44,6 @@
   
 .inventory-item-name{
     color: black;
+    padding-top: 10px;
+    margin-top: 15px;
 }
