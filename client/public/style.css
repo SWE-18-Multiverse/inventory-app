@@ -5,3 +5,6 @@
   font-family: Ovo, serif, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+ }
