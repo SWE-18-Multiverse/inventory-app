@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Inventory from "./components/Inventory.jsx";
-import Item from "./components/Item.jsx";
-import Layout from "./components/Layout.jsx";
-import AddForm from "./components/AddForm.jsx";
+import Inventory from "./components/inventory/Inventory.jsx";
+import Item from "./components/item/Item.jsx";
+import Layout from "./components/navbar/Layout.jsx";
+import AddForm from "./components/addForm/AddForm.jsx";
 
 const container = document.getElementById("root");
 const root = createRoot(container);

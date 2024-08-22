@@ -1,5 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import './inventory.css'
+import LandingImage from "../../images/Layout.jpg"
 
 function Inventory() {
   const [items, setItems] = useState([]);
@@ -20,8 +22,7 @@ function Inventory() {
 
   return (
     <>
-      <h1>Welcome to our Inventory</h1>
-
+      <img className="landingpage-img" src={LandingImage} alt="landing page img"/>
       <ul className="inventory-container">
         {items.map((item) => (
           <li key={item.id}>

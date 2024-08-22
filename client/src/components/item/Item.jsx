@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import EditForm from "./EditForm";
+import EditForm from "../editForm/EditForm";
 
 function Item() {
   const [item, setItem] = useState({
