@@ -134,13 +134,6 @@
     "image": "http://localhost:3000/images/denim-shirt.jpg"
   },
   {
-    "name": "Denim Skirt",
-    "description": "Light denim skirt",
-    "price": 57.85,
-    "category": "women's clothing",
-    "image": "http://localhost:3000/images/denim-shirt.jpg"
-  },
-  {
     "name": "Floral Dress",
     "description": "White and light blue floral dress",
     "price": 40,
