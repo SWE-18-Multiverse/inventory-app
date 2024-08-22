@@ -1,0 +1,60 @@
+/* color: #ced4da 
+color: #0b7285
+*/
+.addform-container {
+    height: 100%;
+    padding: 5%;
+    background-image: url('../../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.form {
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ced4da;
+    background-color: rgba(255, 255, 255, 0.773);
+    border-radius: 8px;
+    padding: 18px 18px;
+    
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 16px 0;
+  display: inline-block;
+  border: 1px solid #ced4da ;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+
+.form p input {
+    width: 80%;
+}
+
+button {
+  width: 100%;
+  background-color: #0b7285 ;
+  color: #ced4da;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+    background-color: #1098ad;
+}

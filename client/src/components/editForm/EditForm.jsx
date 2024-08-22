@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../addForm/form.css'
 
 const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
   const [data, setData] = useState({
@@ -35,11 +36,12 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
 
   return (
     <form
+      className="form"
       action={`http://localhost:3000/items/${currentItem.id}`}
       method="POST"
       onSubmit={handleSubmit}
     >
-      <p>
+      
         <label htmlFor="name">Name: </label>
         <input
           required={true}
@@ -49,8 +51,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           value={data.name}
           onChange={handleChange}
         />
-      </p>
-      <p>
+      
         <label htmlFor="description">Description: </label>
         <textarea
           required={true}
@@ -59,8 +60,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           value={data.description}
           onChange={handleChange}
         />
-      </p>
-      <p>
+     
         <label htmlFor="price">Price: </label>
         <input
           required={true}
@@ -70,8 +70,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           value={data.price}
           onChange={handleChange}
         />
-      </p>
-      <p>
+    
         <label htmlFor="category">Category: </label>
         <input
           required={true}
@@ -81,8 +80,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           value={data.category}
           onChange={handleChange}
         />
-      </p>
-      <p>
+     
         <label htmlFor="image">Image: </label>
         <input
           required={true}
@@ -92,10 +90,9 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           value={data.image}
           onChange={handleChange}
         />
-      </p>
-      <p>
+  
         <button type="submit">Submit</button>
-      </p>
+    
     </form>
   );
 };
