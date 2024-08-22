@@ -229,7 +229,7 @@
     "description": "Grey USA t-shirt with usa print and grey color",
     "price": 15,
     "category": "women's clothing",
-    "image": "http://localhost:3000/images/use-tshirt.jpg"
+    "image": "http://localhost:3000/images/usa-tshirt.jpg"
   },
   {
     "name": "Yellow T-shirt",
