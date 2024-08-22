@@ -42,7 +42,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
       onSubmit={handleSubmit}
     >
       
-        <label htmlFor="name">Name: </label>
+        <label htmlFor="name">Name</label>
         <input
           required={true}
           type="text"
@@ -52,7 +52,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           onChange={handleChange}
         />
       
-        <label htmlFor="description">Description: </label>
+        <label htmlFor="description">Description</label>
         <textarea
           required={true}
           name="description"
@@ -61,7 +61,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           onChange={handleChange}
         />
      
-        <label htmlFor="price">Price: </label>
+        <label htmlFor="price">Price</label>
         <input
           required={true}
           type="number"
@@ -71,7 +71,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           onChange={handleChange}
         />
     
-        <label htmlFor="category">Category: </label>
+        <label htmlFor="category">Category</label>
         <input
           required={true}
           type="text"
@@ -81,7 +81,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
           onChange={handleChange}
         />
      
-        <label htmlFor="image">Image: </label>
+        <label htmlFor="image">Image</label>
         <input
           required={true}
           type="text"
