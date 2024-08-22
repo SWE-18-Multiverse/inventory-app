@@ -4,24 +4,40 @@
 }
 
 .inventory-container{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap:70px;
-    padding: ;
+    justify-content: center;
+    width: 70%;
+    align-items: center;
+    margin: 25px auto;
 }
   
 .inventory-container li {
     list-style-type: none;
     width: 10rem;
+    border: 1px solid #8080807a;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 200px;
+    min-height: 300px;
+    display: flex;
+    box-shadow: rgb(82 81 81 / 34%) 0px 2px 8px 0px;
 }
+
   
 .inventory-container li a{
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
   
 .inventory-image{
     width: 10rem;
     height: 12rem;
+    max-width: 100%;
 }
   
 .inventory-item-name{
