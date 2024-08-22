@@ -7,8 +7,9 @@ color: #0b7285
     background-image: url('../../images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    
+    margin-bottom: -50px;  
 }
+
 .form {
     margin: 0 auto;
     width: 40%;
@@ -37,6 +38,9 @@ input, textarea {
   font-size: 1rem;
 }
 
+#price{
+    font-size: 1rem;
+}
 
 .form p input {
     width: 80%;

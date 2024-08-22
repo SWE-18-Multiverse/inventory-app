@@ -64,7 +64,7 @@ function Item() {
       <h2>{item.category}</h2>
       <img src={item.image} alt={item.name} />
       <p className="item-description">{item.description}</p>
-      <p id='price'>{`£${item.price}`}</p>
+      <p id='item-price'>{`£${item.price}`}</p>
       <div className="button-container">
         <button onClick={handleClick}>Edit Item</button>
         <button onClick={handleDelete}>Delete Item</button>
