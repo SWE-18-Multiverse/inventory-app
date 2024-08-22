@@ -1,6 +1,6 @@
 [
   {
-    "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "name": "Fjallraven - Foldsack No. 1 Backpack",
     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     "price": 109.95,
     "category": "men's clothing",
@@ -55,48 +55,7 @@
     "category": "jewelery",
     "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
   },
-  {
-    "name": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-    "price": 64,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
-  },
-  {
-    "name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-    "price": 109,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
-  },
-  {
-    "name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-    "price": 109,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
-  },
-  {
-    "name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-    "price": 114,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
-  },
-  {
-    "name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-    "price": 599,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
-  },
-  {
-    "name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-    "price": 999.99,
-    "category": "electronics",
-    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
-  },
+
   {
     "name": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
@@ -138,5 +97,145 @@
     "price": 12.99,
     "category": "women's clothing",
     "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+  },
+  {
+    "name": "Barbour Jacket",
+    "description": "Black quilted jacket",
+    "price": 109.95,
+    "category": "men's clothing",
+    "image": "http://localhost:3000/images/barbour-jacket.jpg"
+  },
+  {
+    "name": "Blue Dress",
+    "description": "Blue summer dress",
+    "price": 109.95,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/blue-dress.jpg"
+  },
+  {
+    "name": "Brown Jacket",
+    "description": "Brown autumn jacket ",
+    "price": 200.5,
+    "category": "men's clothing",
+    "image": "http://localhost:3000/images/brown-jacket.jpg"
+  },
+  {
+    "name": "Cream Handbag",
+    "description": "Cream handbag",
+    "price": 400,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/cream-handbag.jpg"
+  },
+  {
+    "name": "Denim Shirt",
+    "description": "Dark denim shirt ",
+    "price": 99.99,
+    "category": "",
+    "image": "http://localhost:3000/images/denim-shirt.jpg"
+  },
+  {
+    "name": "Denim Skirt",
+    "description": "Light denim skirt",
+    "price": 57.85,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/denim-shirt.jpg"
+  },
+  {
+    "name": "Floral Dress",
+    "description": "White and light blue floral dress",
+    "price": 40,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/floral-dress.jpg"
+  },
+  {
+    "name": "Floral Jumpsuit",
+    "description": "Cream floral jumpsuit with brown flower design",
+    "price": 70,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/floral-jumpsuit.jpg"
+  },
+  {
+    "name": "Green Gilet",
+    "description": "Hooded green puffer gilet waistcoat",
+    "price": 37.99,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/green-gilet.jpg"
+  },
+  {
+    "name": "Grey Blazor",
+    "description": "Grey blazor",
+    "price": 84.55,
+    "category": "men's clothing",
+    "image": "http://localhost:3000/images/grey-blazor.jpg"
+  },
+  {
+    "name": "Grey Handbag",
+    "description": "Snake skin grey handbag",
+    "price": 110,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/grey-handbag.jpg"
+  },
+  {
+    "name": "Jean Jacket",
+    "description": "Light jean jacket",
+    "price": 23.66,
+    "category": "men's clothing",
+    "image": "http://localhost:3000/images/jean-jacket.jpg"
+  },
+  {
+    "name": "Jeans",
+    "description": "Skinny blue jeans",
+    "price": 102,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/jeans.jpg"
+  },
+  {
+    "name": "Mini red handbag",
+    "description": "Red ladies handbag",
+    "price": 400,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/mini-red-bag.jpg"
+  },
+  {
+    "name": "Vest",
+    "description": "Skin tight nude vest",
+    "price": 15,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/nude-vest.jpg"
+  },
+  {
+    "name": "The Red Ballgown dress",
+    "description": "Jessica Rabbit dress",
+    "price": 300,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/red-dress.jpg"
+  },
+  {
+    "name": "Red Handbag",
+    "description": "Red handbag with play toy inside",
+    "price": 26.99,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/red-handbag.jpg"
+  },
+  {
+    "name": "Summer dress",
+    "description": "Floral summer dress",
+    "price": 72.44,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/summer-dress.jpg"
+  },
+  {
+    "name": "USA T-shirt",
+    "description": "Grey USA t-shirt with usa print and grey color",
+    "price": 15,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/use-tshirt.jpg"
+  },
+  {
+    "name": "Yellow T-shirt",
+    "description": "Boxy Yellow t-shirt",
+    "price": 30,
+    "category": "women's clothing",
+    "image": "http://localhost:3000/images/yellow-tshirt.jpg"
   }
 ]
