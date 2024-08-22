@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../../components/addForm/form.css'
+
+
 
 const AddForm = ({ fetchItems, hideForm }) => {
   const [data, setData] = useState({
@@ -32,14 +35,17 @@ const AddForm = ({ fetchItems, hideForm }) => {
   };
 
   return (
+    <div className="addform-container">
     <form
+      className="form"
       action={"http://localhost:3000/items"}
       method="POST"
       onSubmit={handleSubmit}
     >
-      <p>
-        <label htmlFor="name">Name</label>
+      
+        <label htmlFor="name">Name </label>
         <input
+          placeholder="Enter a name"
           required={true}
           type="text"
           name="name"
@@ -47,20 +53,22 @@ const AddForm = ({ fetchItems, hideForm }) => {
           value={data.name}
           onChange={handleChange}
         />
-      </p>
-      <p>
-        <label htmlFor="description">Description</label>
+    
+    
+        <label htmlFor="description">Description </label>
         <textarea
+          placeholder="Enter a description"
           required={true}
           name="description"
           id="description"
           value={data.description}
           onChange={handleChange}
         />
-      </p>
-      <p>
-        <label htmlFor="price">Price</label>
+      
+      
+        <label htmlFor="price">Price </label>
         <input
+          placeholder="0"
           required={true}
           type="number"
           name="price"
@@ -68,10 +76,11 @@ const AddForm = ({ fetchItems, hideForm }) => {
           value={data.price}
           onChange={handleChange}
         />
-      </p>
-      <p>
-        <label htmlFor="category">Category</label>
+      
+      
+        <label htmlFor="category">Category </label>
         <input
+          placeholder="Enter a category"
           required={true}
           type="text"
           name="category"
@@ -79,10 +88,11 @@ const AddForm = ({ fetchItems, hideForm }) => {
           value={data.category}
           onChange={handleChange}
         />
-      </p>
-      <p>
-        <label htmlFor="image">Image</label>
+      
+      
+        <label htmlFor="image">Image </label>
         <input
+        placeholder="Enter a URL"
           required={true}
           type="text"
           name="image"
@@ -90,11 +100,12 @@ const AddForm = ({ fetchItems, hideForm }) => {
           value={data.image}
           onChange={handleChange}
         />
-      </p>
+      
       <p>
         <button type="submit">Create Item</button>
       </p>
     </form>
+    </div>
   );
 };
 
