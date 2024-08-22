@@ -63,6 +63,7 @@ const EditForm = ({ currentItem, setItem, setIsEditingItem}) => {
      
         <label htmlFor="price">Price</label>
         <input
+          className="price-input"
           required={true}
           type="number"
           name="price"
