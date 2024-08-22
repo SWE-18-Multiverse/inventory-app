@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EditForm from "../editForm/EditForm";
+import './item.css'
 
 function Item() {
   const [item, setItem] = useState({
@@ -58,14 +59,17 @@ function Item() {
   };
 
   return (
-    <>
+    <div className="item-container">
       <h1>{item.name}</h1>
       <h2>{item.category}</h2>
       <img src={item.image} alt={item.name} />
-      <p>{item.description}</p>
-      <p>{`£${item.price}`}</p>
-      <button onClick={handleClick}>Edit Item</button>
-      <button onClick={handleDelete}>Delete Item</button>
+      <p className="item-description">{item.description}</p>
+      <p id='price'>{`£${item.price}`}</p>
+      <div className="button-container">
+        <button onClick={handleClick}>Edit Item</button>
+        <button onClick={handleDelete}>Delete Item</button>
+      </div>
+      
       {isEditingItem && (
         <EditForm
           currentItem={item}
@@ -73,7 +77,7 @@ function Item() {
           setIsEditingItem={setIsEditingItem}
         />
       )}
-    </>
+    </div>
   );
 }
 

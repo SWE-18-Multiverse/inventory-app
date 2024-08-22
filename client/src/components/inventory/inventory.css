@@ -6,21 +6,20 @@
 .inventory-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:70px;
+    gap:20px;
     justify-content: center;
     width: 70%;
     align-items: center;
-    margin: 25px auto;
+    margin: 50px auto;
 }
   
 .inventory-container li {
     list-style-type: none;
-    width: 10rem;
     border: 1px solid #8080807a;
     border-radius: 8px;
     padding: 10px;
-    min-width: 200px;
-    min-height: 300px;
+    min-width: 300px;
+    min-height: 400px;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -37,8 +36,7 @@
 }
   
 .inventory-image{
-    width: 10rem;
-    height: 12rem;
+    width: 400px;   
     max-width: 100%;
 }
   
