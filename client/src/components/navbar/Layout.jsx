@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import './layout.css';
 import Logo from  '../../images/logo.jpg';
+import Footer from "../footer/Footer";
 
 function Layout() {
   return (
@@ -15,6 +16,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
