@@ -3,12 +3,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ced4da;   
+    border-bottom: 1px solid #ced4da;  
+    position: fixed;
+    width: 100%;
+    top:0; 
+    background: white;
 }
    
 .logo-img {
-    width: 15rem;
-      
+    width: 15rem; 
 }
 
 .navbar-list{
