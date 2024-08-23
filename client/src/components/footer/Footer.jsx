@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="container grid grid--footer">
       <div className="logo-col">
         <a href="#" class="footer-logo">
-          <img class="logo" src={Logo} alt="SWinted logo" />
+          <img className="logo" src={Logo} alt="SWinted logo" />
         </a>
 
         <ul className="social-links">
